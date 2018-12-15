@@ -1,0 +1,271 @@
+/* 定义一个边框颜色的变量 */
+/* 微金所的默认的主题色 */
+/* 头部区域样式 */
+#header {
+  border-bottom: 1px solid #ccc;
+}
+#header .row {
+  /* 使用标签选择器推荐使用子代 避免误杀后面的元素 */
+}
+#header .row > div {
+  line-height: 40px;
+  height: 40px;
+  font-size: 12px;
+  /* 表示选中当前元素的下一个兄弟元素 */
+}
+#header .row > div > a {
+  color: #666;
+}
+#header .row > div > a.btn-danger {
+  color: #fff;
+}
+#header .row > div + div {
+  border-left: 1px solid #ccc;
+}
+/* 轮播图区域的样式 */
+#slide .large-image {
+  /*大图要居中在页面中显示 高度是固定*/
+  /*width: 100%;*/
+  /*height: 410px;*/
+  background-position: center center;
+  width: 100%;
+  height: 410px;
+}
+#slide .small-image {
+  /*小图需要全屏显示等比例缩放*/
+  width: 100%;
+}
+/* 导航条区域的样式 */
+#nav {
+  background-color: #fff;
+  margin-bottom: 0;
+}
+#nav .navbar-header .navbar-brand {
+  height: 80px;
+  line-height: 50px;
+}
+#nav .navbar-header .navbar-brand .icon-icon {
+  font-size: 30px;
+  color: #e92322;
+}
+#nav .navbar-header .navbar-brand .icon-logo {
+  font-size: 30px;
+  color: #000;
+}
+#nav .navbar-collapse .navbar-nav > li.active > a {
+  background-color: #fff;
+  border-bottom: 2px solid #e92322;
+}
+#nav .navbar-collapse .navbar-nav > li > a {
+  height: 80px;
+  /* 因为a默认自带了上下15px padding导致内容只有50px高度 行高只能写50px */
+  line-height: 48px;
+}
+#nav .navbar-collapse .navbar-nav > li > a:hover {
+  border-bottom: 2px solid #e92322;
+}
+/* 特色介绍区域样式 */
+#feature {
+  /* 父元素和子元素直接的间距使用padding */
+  padding: 40px 0;
+}
+#feature .media {
+  /* 兄弟和兄弟直接的间距使用margin */
+  margin-bottom: 10px;
+}
+#feature .media a {
+  color: #666;
+  text-decoration: none;
+}
+#feature .media a:hover {
+  color: #e92322;
+  text-decoration: none;
+}
+/* 立即预约区域样式 */
+#booking {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  /* 缩小了会有多行文本 推荐使用padding */
+  padding: 20px;
+}
+#booking .text-danger {
+  color: #e92322;
+}
+#products {
+  padding-top: 40px;
+  background-color: #eee;
+}
+#products .nav-tabs {
+  font-size: 16px;
+}
+#products .nav-tabs a {
+  color: #666;
+  border: 0;
+}
+#products .nav-tabs li {
+  height: 45px;
+}
+#products .nav-tabs li.active a {
+  height: 45px;
+  background-color: transparent;
+  border-bottom: 3px solid #e92322;
+}
+#products .nav-tabs li:hover a {
+  border: 0;
+  border-bottom: 3px solid #e92322;
+}
+#products #product1 > div:first-of-type::before {
+  position: absolute;
+  content: '\e915';
+  font-family: "itcast";
+  font-size: 30px;
+  top: 9px;
+  color: #fff;
+}
+#products #product1 > div:nth-of-type(2) .btn-default {
+  position: absolute;
+  top: 10px;
+}
+#products #product1 > div:nth-of-type(2) .btn-default:first-of-type {
+  left: 10px;
+  border: 1px solid #0f0;
+}
+#products #product1 > div:nth-of-type(2) .btn-default:last-of-type {
+  right: 10px;
+  border: 1px solid #000;
+}
+#products .product {
+  background-color: #fff;
+  display: flex;
+  margin-top: 15px;
+}
+#products .product.active {
+  background-color: #e92322;
+  color: #fff;
+}
+#products .product .left {
+  padding: 15px 0;
+  flex: 1;
+  text-align: left;
+  border-right: 1px dashed #ccc;
+}
+#products .product .left h4 {
+  text-align: center;
+}
+#products .product .left div {
+  margin-bottom: 10px;
+}
+#products .product .left div:nth-of-type(2n) {
+  text-align: right;
+}
+#products .product .left p {
+  margin: 0;
+}
+#products .product .right {
+  position: relative;
+  /* 小图案用伪元素来做 */
+  padding: 15px 0;
+  width: 119px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#products .product .right::before,
+#products .product .right::after {
+  /* 必须写content才能有效果  */
+  content: '';
+  position: absolute;
+  left: -8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #eee;
+}
+#products .product .right::before {
+  top: -8px;
+}
+#products .product .right::after {
+  bottom: -8px;
+}
+#products .product .right p {
+  text-align: center;
+  margin-bottom: 0;
+}
+#products .product .right p strong {
+  font-size: 30px;
+}
+@media (min-width: 320px) and (max-width: 360px) {
+  #products .product .right {
+    width: 90px;
+  }
+}
+#news {
+  padding-top: 50px;
+}
+#news h4 {
+  position: relative;
+  text-align: center;
+  border-bottom: 1px dashed #eee;
+  line-height: 50px;
+}
+#news h4:before {
+  position: absolute;
+  bottom: -5px;
+  right: -10px;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+#news .nav-tabs {
+  border: 0;
+  margin-bottom: 50px;
+}
+#news .nav-tabs > li {
+  margin-top: 10px;
+}
+@media (max-width: 992px) {
+  #news .nav-tabs > li {
+    width: 25%;
+  }
+  #news .nav-tabs > li a {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+  }
+}
+#news .nav-tabs > li a {
+  border: 0;
+  font-size: 30px;
+  border-radius: 50%;
+}
+#news .nav-tabs > li a:hover {
+  background-color: #e92322;
+}
+#news .nav-tabs > li.active a {
+  background-color: #e92322;
+}
+#news .tab-content > .tab-pane > ul > li {
+  list-style: none;
+  margin: 20px 0;
+}
+#news .tab-content > .tab-pane > ul > li a {
+  color: #666;
+  text-decoration: none;
+}
+#partner h3 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+#partner .row:nth-of-type(2) {
+  font-size: 80px;
+}
+#partner .row:nth-of-type(2) a {
+  color: #666;
+  text-decoration: none;
+}
+#partner .row:nth-of-type(2) a:hover {
+  color: #e92322;
+  text-decoration: none;
+}
